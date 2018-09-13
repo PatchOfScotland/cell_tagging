@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "lib": ["es2015", "dom"],
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "noImplicitAny": true,
     "noEmitOnError": true,
     "noUnusedLocals": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES6",
     "outDir": "./lib",
-    "target": "es2015",
-    "strict": true,
-    "strictNullChecks": false,
-    "types": []
+    "lib": ["ES5", "ES2015.Promise", "DOM"],
+    "types": ["node"]
   },
   "include": ["src/*"]
 }

@@ -1,38 +1,62 @@
 {
-  "name": "jupyterlab_cell_tagging",
-  "version": "0.1.0",
-  "description": "A JupyterLab extension.",
+  "name": "@jupyterlab/celltags",
+  "version": "0.1.4",
+  "description": "Extension for adding descriptive tags to notebook cells (Beta)",
   "keywords": [
     "jupyter",
     "jupyterlab",
     "jupyterlab-extension"
   ],
-  "homepage": "https://github.com/PatchOfScotland/cell_tagging.git",
+  "homepage": "https://github.com/jupyterlab/jupyterlab-celltags.git",
   "bugs": {
-    "url": "https://github.com/PatchOfScotland/cell_tagging.git/issues"
+    "url": "https://github.com/jupyterlab/jupyterlab-celltags.git/issues"
   },
   "license": "BSD-3-Clause",
-  "author": "PatchOfScotland",
+  "author": "Zuoyuan Huang, Markelle Kelly, Rose Chang",
   "files": [
     "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
-    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}",
+    "static/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
   ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PatchOfScotland/cell_tagging.git.git"
+    "url": "https://github.com/jupyterlab/jupyterlab-celltags.git"
   },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf lib",
-    "watch": "tsc -w",
-    "prepare": "npm run clean && npm run build"
+    "watch": "tsc -w"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
-    "@jupyterlab/application": "^0.18.0"
+    "@jupyterlab/application": ">=0.18.0",
+    "@jupyterlab/apputils": ">=0.18.0",
+    "@jupyterlab/coreutils": ">=2.0.1",
+    "@jupyterlab/docmanager": ">=0.18.0",
+    "@jupyterlab/notebook": ">=0.18.0",
+    "@jupyterlab/notebook-extension": "^0.18.0",
+    "@jupyterlab/rendermime": ">=0.18.0",
+    "@types/node": "^10.5.1",
+    "@types/react-dom": "^16.0.6",
+    "react": "~16.4.0",
+    "typestyle": "^2.0.1"
   },
   "devDependencies": {
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
     "rimraf": "^2.6.1",
     "typescript": "~2.9.2"
   },
