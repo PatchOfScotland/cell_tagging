@@ -2,6 +2,8 @@
 
 A JupyterLab extension.
 
+This is an import of the repository at https://github.com/jupyterlab/jupyterlab-celltags
+
 
 ## Prerequisites
 
